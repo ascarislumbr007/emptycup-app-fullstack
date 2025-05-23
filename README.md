@@ -55,7 +55,7 @@ To run this application locally using Docker:
 
 ## Public Deployment
 
-This application is designed for public deployment as follows:
+his application is designed for public deployment as follows:
 
 * **Frontend (React):** The React frontend is deployed using [Netlify](https://www.netlify.com/). Continuous deployment is enabled, meaning pushes to the main branch of this repository automatically trigger new deployments on Netlify.
     * **Live Demo:** [Your Netlify URL here, e.g., `https://emptycup-listings.netlify.app`]
