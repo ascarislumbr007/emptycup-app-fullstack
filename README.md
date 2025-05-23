@@ -47,3 +47,24 @@ To run this application locally using Docker:
     Open your web browser and navigate to `http://localhost`.
 
 ## Project Structure
+
+
+# EmptyCup Application
+
+... (Previous sections for Local Development) ...
+
+## Public Deployment
+
+This application is designed for public deployment as follows:
+
+* **Frontend (React):** The React frontend is deployed using [Netlify](https://www.netlify.com/). Continuous deployment is enabled, meaning pushes to the main branch of this repository automatically trigger new deployments on Netlify.
+    * **Live Demo:** [Your Netlify URL here, e.g., `https://emptycup-listings.netlify.app`]
+    * **Netlify Build Settings:**
+        * Base directory: `emptycup-app`
+        * Build command: `npm run build`
+        * Publish directory: `dist`
+        * **Environment Variables:** Firebase API keys and other sensitive variables are configured directly in Netlify's site settings under Environment Variables.
+
+* **Backend (Firebase Firestore):** The data for company listings is managed and served directly from Google Firebase Cloud Firestore. This acts as the serverless backend, handling data storage and retrieval.
+    * **Firebase Project:** [Link to your Firebase Console project if you want to be super explicit, though usually not needed for users]
+    * **Security Rules:** Cloud Firestore security rules are configured to manage read/write access to the `companies` collection. **(Note: For production, ensure secure rules are in place, typically involving Firebase Authentication.)**
