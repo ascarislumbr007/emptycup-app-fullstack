@@ -14,8 +14,8 @@ To run this application locally using Docker:
 
 1.  **Clone the repository:**
     ```bash
-    git clone <your-repo-url>
-    cd <your-repo-name>
+    git clone <https://github.com/ascarislumbr007/emptycup-app-fullstack>
+    cd <emptycup-app-fullstack>
     ```
 
 2.  **Firebase Configuration:**
