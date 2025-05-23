@@ -1,0 +1,44 @@
+/* src/components/Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Added shadow for header */
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-placeholder {
+    width: 35px;
+    height: 35px;
+    background-color: transparent; /* Changed to transparent, assuming your logo has its own background */
+    border-radius: 50%; /* Still useful if the image is square and you want a circle mask */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    overflow: hidden;
+}
+
+.logo-placeholder img {
+    width: 100%; /* Make image fit container */
+    height: 100%;
+    object-fit: contain; /* Ensure the whole logo is visible */
+}
+
+.header-title {
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #333;
+}
+
+.menu-icon {
+    font-size: 1.5em;
+    color: #555;
+}

@@ -1,0 +1,21 @@
+# Node modules
+node_modules/
+emptycup-app/node_modules/
+
+# Build output
+emptycup-app/dist/
+
+# Environment variables
+.env
+emptycup-app/.env
+
+# Docker
+.dockerignore
+# If you were storing any database data locally in Docker
+# volumes/
+
+# macOS specific files
+.DS_Store
+
+# VS Code specific files
+.vscode/

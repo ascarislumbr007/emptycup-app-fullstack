@@ -1,0 +1,40 @@
+/* src/components/Navigation.css */
+.navigation {
+    display: flex; /* Make items horizontal */
+    justify-content: space-around; /* Distribute items evenly */
+    padding: 15px 10px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column; /* Stack icon and text vertically within each item */
+    align-items: center; /* Center horizontally */
+    color: #666;
+    font-size: 0.85em;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease; /* Smooth transition */
+    padding: 5px 8px; /* Add some padding for clickable area */
+    border-radius: 8px; /* Rounded corners for active state */
+}
+
+.nav-item .nav-icon {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+    color: #795548; /* Brown/tan color for all default icons */
+}
+
+.nav-item.active {
+    color: #795548; /* Active text color */
+    background-color: rgba(221, 164, 77, 0.1); /* Light brown/tan background for active item */
+}
+
+.nav-item.active .nav-icon {
+    color: #DDA44D; /* More prominent brown/tan for active icon */
+}
+
+.nav-text {
+    font-weight: 500;
+}

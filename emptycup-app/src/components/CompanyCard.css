@@ -1,0 +1,174 @@
+/* src/components/CompanyCard.css */
+.company-card {
+    display: flex; /* Makes main content and actions horizontal */
+    background-color: var(--company-card-bg-color, rgba(255, 252, 242, 1)); /* Use CSS variable for flexibility */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative; /* Crucial for absolute positioning of card-actions */
+    padding-right: 80px; /* Make space for action buttons on the right */
+    min-height: 180px; /* Give it a minimum height to avoid squishing */
+}
+
+.card-main-content {
+    flex-grow: 1; /* Take remaining space */
+    padding: 15px;
+    border-right: 1px dashed #eee; /* Dotted line separator */
+    display: flex; /* Make content within it flexible */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-between; /* Distribute content */
+}
+
+.card-header {
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-size: 1.3em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.star-rating {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.star-icon {
+    font-size: 1.1em;
+    color: #ccc; /* Default star color */
+    margin-right: 2px;
+}
+
+.star-icon.filled {
+    color: #FFC107; /* Gold for filled stars */
+}
+
+.company-description {
+    font-size: 0.9em;
+    color: #666;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+.company-stats {
+    display: flex; /* Make stats horizontal */
+    justify-content: space-between; /* Distribute them */
+    margin-bottom: 15px;
+    padding-right: 15px;
+    width: 80%; /* Adjust width to make space for right part if needed */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.9em;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #333;
+    font-size: 1.1em;
+    margin-bottom: 3px;
+}
+
+.stat-label {
+    color: #888;
+}
+
+.phone-numbers {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.phone-number {
+    font-size: 0.95em;
+    color: #DDA44D; /* A color similar to the image's text */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.phone-number:hover {
+    text-decoration: underline;
+}
+
+/* Right-side action buttons */
+.card-actions {
+    position: absolute; /* Position relative to .company-card */
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 80px; /* Fixed width for actions column */
+    background-color: #F8F8F8; /* Light background for actions */
+    display: flex;
+    flex-direction: column; /* Stack actions vertically */
+    justify-content: space-around; /* Distribute actions evenly */
+    align-items: center; /* Center horizontally */
+    border-left: 1px solid #eee;
+    padding: 10px 0;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7em;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.2s ease;
+    text-align: center;
+    width: 100%; /* Make action item take full width of action column */
+    padding: 5px 0; /* Add vertical padding */
+}
+
+.action-item:hover {
+    color: #DDA44D;
+}
+
+.action-icon {
+    font-size: 1.3em;
+    margin-bottom: 3px;
+}
+
+/* Specific styling for the shortlist icon */
+.shortlist-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column; /* To make sure clipboard and heart stay aligned if needed */
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Make it fill its parent */
+    height: 100%; /* Make it fill its parent */
+}
+
+.clipboard-icon {
+    font-size: 1.2em; /* Size of the clipboard */
+    color: #888; /* Default color */
+    position: relative; /* Ensure it stays in flow */
+    z-index: 1; /* Ensure clipboard is behind heart for visual effect */
+}
+
+.heart-small {
+    position: absolute; /* Position heart over clipboard */
+    font-size: 0.7em; /* Size of the heart */
+    background-color: transparent; /* Ensure no background interferes */
+    z-index: 2; /* Bring heart to front */
+    color: #ccc; /* Default outlined heart color */
+}
+
+.heart-small.filled {
+    color: #e74c3c; /* Red color for filled heart */
+}
+
+.action-item:hover .clipboard-icon {
+    color: #DDA44D; /* Color for clipboard on hover */
+}
+
+/* Specific hover for the heart */
+.action-item:hover .heart-small.outlined {
+    color: #e74c3c; /* Red for outlined heart on hover */
+}

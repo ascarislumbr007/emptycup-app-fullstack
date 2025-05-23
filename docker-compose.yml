@@ -1,0 +1,24 @@
+# docker-compose.yml
+version: '3.8'
+services:
+  frontend:
+    build: ./emptycup-app
+    ports:
+      - "80:80" # Map host port 80 to container port 80 (Nginx default)
+    volumes:
+      - ./emptycup-app:/app # Mount your app code for easier development
+      - /app/node_modules # Exclude node_modules from mounting
+    environment:
+      # Vite uses VITE_ prefix for env vars exposed to client side
+      - VITE_FIREBASE_API_KEY=AIzaSyA63zCxwsq-3n-VRdHM7OEEGfelukQV5e4
+      - VITE_FIREBASE_AUTH_DOMAIN=emptycupapp.firebaseapp.com
+      - VITE_FIREBASE_PROJECT_ID=emptycupapp
+      - VITE_FIREBASE_STORAGE_BUCKET=emptycupapp.firebasestorage.app
+      - VITE_FIREBASE_MESSAGING_SENDER_ID=1067893833240
+      - VITE_FIREBASE_APP_ID=1:1067893833240:web:129a7180a975a974f30d6d
+      # Add other Firebase config values as VITE_ variables
+    # If you want to use the local dev server instead of Nginx for local dev
+    # command: npm run dev
+    # ports:
+    #   - "5173:5173"
+    # Note: For production build, Nginx is better.
