@@ -1,4 +1,4 @@
-// src/components/CompanyCard.jsx
+
 import React from 'react';
 import './CompanyCard.css';
 import {
@@ -9,11 +9,11 @@ import {
   FaPhoneAlt,
   FaExclamationCircle,
   FaClipboard,
-  FaHeart, // Import filled heart
-  FaRegHeart // Import outlined heart
+  FaHeart, 
+  FaRegHeart 
 } from 'react-icons/fa';
 
-function CompanyCard({ company, backgroundColor, isShortlisted, onToggleShortlist }) { // Accept new props
+function CompanyCard({ company, backgroundColor, isShortlisted, onToggleShortlist }) { 
   const renderStars = (rating) => {
     const stars = [];
     for (let i = 0; i < 5; i++) {
@@ -71,16 +71,16 @@ function CompanyCard({ company, backgroundColor, isShortlisted, onToggleShortlis
         {/* Shortlist button with toggle functionality */}
         <div className="action-item" onClick={onToggleShortlist}>
           <span className="action-icon shortlist-icon">
-            {/* Conditional rendering of heart icon */}
+            {}
             {isShortlisted ? (
               <FaClipboard className="clipboard-icon" />
             ) : (
               <FaClipboard className="clipboard-icon" />
             )}
             {isShortlisted ? (
-              <FaHeart className="heart-small filled" /> // Filled heart if shortlisted
+              <FaHeart className="heart-small filled" /> 
             ) : (
-              <FaRegHeart className="heart-small outlined" /> // Outlined heart if not
+              <FaRegHeart className="heart-small outlined" /> 
             )}
           </span>
           <span className="action-text">Shortlist</span>
